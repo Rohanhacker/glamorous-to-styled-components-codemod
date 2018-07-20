@@ -1,4 +1,4 @@
-import _ from "lodash";
+const _ = require("lodash");
 
 module.exports = function(babel) {
   const { types: t, template } = babel;
@@ -85,7 +85,7 @@ module.exports = function(babel) {
           arg.properties.map(a => {
             template = template.concat(
               `${_.kebabCase(a.key.name)}: ${
-                a.value.value ? a.value.value : '""'
+                a.value.value === "" ? a.value.value : '""'
               };`
             );
           });
