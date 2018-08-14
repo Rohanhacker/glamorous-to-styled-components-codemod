@@ -1,8 +1,9 @@
 {
   "name": "glamorous-to-styled-components-codemod",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
+  "repository": "https://github.com/tejasq/glamorous-to-styled-components-codemod",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +12,7 @@
     "styled-components",
     "glamorous"
   ],
-  "author": "",
+  "author": "Rohan Malhotra",
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.10"
