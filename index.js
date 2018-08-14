@@ -1,3 +1,18 @@
+/**
+ * glamorous-to-styled-components-codemod
+ *
+ * This babel plugin should migrate any existing codebase
+ * using React and glamorous to styled components.
+ *
+ *
+ * You can use it as a babel plugin by adding it to your .babelrc
+ * under "plugins", or use it as a one-off codemod by using the
+ * babel cli:
+ *
+ * babel [your-source-dir] --plugins=glamorous-to-styled-components-codemod --presets=react,etc... --out-dir=[your-source-dir]
+ *
+ */
+
 const _ = require("lodash");
 
 module.exports = function(babel) {
