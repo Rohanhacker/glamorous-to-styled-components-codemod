@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/glamorous-to-styled-components-codemod.svg)](https://badge.fury.io/js/glamorous-to-styled-components-codemod)
+
 # glamorous  → styled components
 
 Demo - https://astexplorer.net/#/gist/7bc4771564a12c9f93c4904b3934aa1c/latest
