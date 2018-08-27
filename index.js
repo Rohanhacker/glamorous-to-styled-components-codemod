@@ -98,11 +98,13 @@ module.exports = function(babel) {
         let template = "";
         args.map(arg => {
           arg.properties.map(a => {
-            template = template.concat(
-              `${_.kebabCase(a.key.name)}: ${
-                a.value.value === "" ? a.value.value : '""'
-              };`
-            );
+            let val = "";
+            if (a.value.type === "NumericLiteral") {
+              val = `${a.value.value}px`;
+            } else if (a.value.type === "StringLiteral") {
+              val = a.value.value;
+            }
+            template = template.concat(`${_.kebabCase(a.key.name)}: ${val};`);
           });
         });
         path.replaceWithMultiple(
