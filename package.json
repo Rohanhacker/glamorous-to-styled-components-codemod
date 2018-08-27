@@ -3,7 +3,7 @@
   "version": "1.0.3",
   "description": "",
   "main": "index.js",
-  "repository": "https://github.com/tejasq/glamorous-to-styled-components-codemod",
+  "repository": "https://github.com/rohanhacker/glamorous-to-styled-components-codemod",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
