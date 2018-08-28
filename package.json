@@ -1,6 +1,6 @@
 {
   "name": "glamorous-to-styled-components-codemod",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "index.js",
   "repository": "https://github.com/rohanhacker/glamorous-to-styled-components-codemod",

@@ -1,20 +1,10 @@
 /**
  * glamorous-to-styled-components-codemod
- *
- * This babel plugin should migrate any existing codebase
- * using React and glamorous to styled components.
- *
- *
- * You can use it as a babel plugin by adding it to your .babelrc
- * under "plugins", or use it as a one-off codemod by using the
- * babel cli:
- *
- * babel [your-source-dir] --plugins=glamorous-to-styled-components-codemod --presets=react,etc... --out-dir=[your-source-dir]
- *
- */
-
-const _ = require("lodash");
-
+*/
+const body = document.getElementsByTagName("body")[0]
+const scr = document.createElement("script")
+scr.src = "https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"
+body.appendChild(scr)
 module.exports = function(babel) {
   const { types: t, template } = babel;
   return {
@@ -103,6 +93,8 @@ module.exports = function(babel) {
               val = `${a.value.value}px`;
             } else if (a.value.type === "StringLiteral") {
               val = a.value.value;
+            } else {
+              return
             }
             template = template.concat(`${_.kebabCase(a.key.name)}: ${val};`);
           });
