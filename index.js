@@ -1,10 +1,9 @@
+const _ = require("lodash");
+
 /**
  * glamorous-to-styled-components-codemod
 */
-const body = document.getElementsByTagName("body")[0]
-const scr = document.createElement("script")
-scr.src = "https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"
-body.appendChild(scr)
+
 module.exports = function(babel) {
   const { types: t, template } = babel;
   return {
