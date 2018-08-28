@@ -2,7 +2,7 @@ const _ = require("lodash");
 
 /**
  * glamorous-to-styled-components-codemod
-*/
+ */
 
 module.exports = function(babel) {
   const { types: t, template } = babel;
@@ -88,16 +88,28 @@ module.exports = function(babel) {
         args.map(arg => {
           arg.properties.map(a => {
             let val = "";
+            let key = "";
             if (a.value.type === "NumericLiteral") {
               val = `${a.value.value}px`;
+              key = _.kebabCase(a.key.name);
             } else if (a.value.type === "StringLiteral") {
               val = a.value.value;
+              key = _.kebabCase(a.key.name);
             } else {
-              return
+              if (a.value.type === "ObjectExpression") {
+                let pseudo = "";
+                _.forEach(a.value.properties, (val, key) => {
+                  pseudo += `${_.kebabCase(val.key.name)}: ${val.value.value}; `;
+                });
+                key = `&${a.key.value}`;
+                template = template.concat(`${key}: { ${pseudo} } `);
+              }
+              return;
             }
             template = template.concat(`${_.kebabCase(a.key.name)}: ${val};`);
           });
         });
+
         path.replaceWithMultiple(
           t.TaggedTemplateExpression(
             fn,
