@@ -2,7 +2,7 @@
 
 # glamorous  → styled components
 
-Demo - https://astexplorer.net/#/gist/7bc4771564a12c9f93c4904b3934aa1c/latest
+Demo - https://astexplorer.net/#/gist/a870e9dd1b4e136ee8e42c365170703c/latest
 
 ## Usage
 You'll need to use [`babel-codemod`](https://github.com/square/babel-codemod) to apply this codemod to your existing codebase. It should be pretty straightforward:
