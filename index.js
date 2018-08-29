@@ -90,8 +90,8 @@ module.exports = function(babel) {
             let val = "";
             let key = "";
             if (a.value.type === "NumericLiteral") {
-              val = `${a.value.value}px`;
               key = _.kebabCase(a.key.name);
+              val = key === "z-index" ? a.value.value : `${a.value.value}px`;
             } else if (a.value.type === "StringLiteral") {
               val = a.value.value;
               key = _.kebabCase(a.key.name);
@@ -99,7 +99,9 @@ module.exports = function(babel) {
               if (a.value.type === "ObjectExpression") {
                 let pseudo = "";
                 _.forEach(a.value.properties, (val, key) => {
-                  pseudo += `${_.kebabCase(val.key.name)}: ${val.value.value}; `;
+                  pseudo += `${_.kebabCase(val.key.name)}: ${
+                    val.value.value
+                  }; `;
                 });
                 key = `&${a.key.value}`;
                 template = template.concat(`${key}: { ${pseudo} } `);
