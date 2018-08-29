@@ -104,7 +104,7 @@ module.exports = function(babel) {
                   }; `;
                 });
                 key = `&${a.key.value}`;
-                template = template.concat(`${key}: { ${pseudo} } `);
+                template = template.concat(`${key} { ${pseudo} } `);
               }
               return;
             }
