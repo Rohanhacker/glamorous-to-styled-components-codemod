@@ -91,7 +91,14 @@ module.exports = function(babel) {
             let key = "";
             if (a.value.type === "NumericLiteral") {
               key = _.kebabCase(a.key.name);
-              val = key === "z-index" ? a.value.value : `${a.value.value}px`;
+              if (a.value.type === "NumericLiteral") {
+                key = _.kebabCase(a.key.name);
+                if (_.includes(["z-index", "opacity", "line-height"], key)) {
+                  val = a.value.value;
+                } else {
+                  val = `${a.value.value}px`;
+                }
+              }
             } else if (a.value.type === "StringLiteral") {
               val = a.value.value;
               key = _.kebabCase(a.key.name);
