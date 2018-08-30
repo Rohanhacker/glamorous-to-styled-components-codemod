@@ -96,7 +96,7 @@ module.exports = function(babel) {
                 if (_.includes(["z-index", "opacity", "line-height"], key)) {
                   val = a.value.value;
                 } else {
-                  val = `${a.value.value}px`;
+                  val = a.value.value ? `${a.value.value}px` : a.value.value;
                 }
               }
             } else if (a.value.type === "StringLiteral") {
