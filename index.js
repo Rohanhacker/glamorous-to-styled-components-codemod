@@ -93,7 +93,7 @@ module.exports = function(babel) {
               key = _.kebabCase(a.key.name);
               if (a.value.type === "NumericLiteral") {
                 key = _.kebabCase(a.key.name);
-                if (_.includes(["z-index", "opacity", "line-height"], key)) {
+                if (_.includes(["z-index", "opacity", "line-height", "font-weight"], key)) {
                   val = a.value.value;
                 } else {
                   val = a.value.value ? `${a.value.value}px` : a.value.value;

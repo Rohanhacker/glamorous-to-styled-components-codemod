@@ -9,7 +9,7 @@ You'll need to use [`babel-codemod`](https://github.com/square/babel-codemod) to
 
 - First, install this plugin: `yarn add glamorous-to-styled-components-codemod -D`
 
-- Then run it: `yarn babel-codemod --plugin glamorous-to-styled-components-codemod "src/**/*.js"`
+- Then run it: `codemod --plugin glamorous-to-styled-components-codemod "src/**/*.js"`
 
 
 ## ALL CONTRIBUTIONS WELCOME!
